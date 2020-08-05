@@ -13,8 +13,8 @@ namespace HomeWork3
             var testList = new List<int> { 1, 2, 3, 4 };
             var isOnlyEven = false;
             ///Console.WriteLine(testList.GetElementsString());
-            testList.ConditionalWhere(isOnlyEven,number=>number % 2 == 0);
-            
+            //testList.ConditionalWhere(isOnlyEven,number=>number % 2 == 0);
+            Console.WriteLine(testList.ConditionalWhere(isOnlyEven, number => number % 2 == 0).GetElementsString());
             
             
             Console.ReadKey();

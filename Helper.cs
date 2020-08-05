@@ -18,11 +18,11 @@ namespace HomeWork3
                     result +=", ";
                 }
             }
-            result += ".";
+            //result += ".";
             return result;
         }
         
-        public static IEnumerable<T> ConditionalWhere<T>(this IEnumerable<T> collection, bool isOnlyEven, Func<T,bool> condition)
+        public static List<T> ConditionalWhere<T>(this IEnumerable<T> collection, bool isOnlyEven, Func<T,bool> condition)
         {
             var result = new List<T>();
             if (isOnlyEven) 
@@ -36,16 +36,16 @@ namespace HomeWork3
                 result = (List<T>)collection;
             }
             
-            string str = "";
-            for (int i = 0; i < result.Count; i++)
-            {
-                str += result[i];
-                if (i < result.Count - 1)
-                {
-                    str += ", ";
-                }
-            }
-            Console.WriteLine(str);
+            //string str = "";
+            //for (int i = 0; i < result.Count; i++)
+            //{
+            //    str += result[i];
+            //    if (i < result.Count - 1)
+            //    {
+            //        str += ", ";
+            //    }
+            //}
+            //Console.WriteLine(str);
             return result;
         }
     
