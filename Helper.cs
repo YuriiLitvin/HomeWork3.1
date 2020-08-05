@@ -22,26 +22,30 @@ namespace HomeWork3
             return result;
         }
         
-        public static string ConditionalWhere<T>(this IEnumerable<T> collection, bool isOnlyEven, Func<T,bool> condition)
+        public static IEnumerable<T> ConditionalWhere<T>(this IEnumerable<T> collection, bool isOnlyEven, Func<T,bool> condition)
         {
-            string result = "";
+            var result = new List<T>();
             if (isOnlyEven) 
             {
                 var selectedItems = collection.Where(condition);
                 foreach (var item in selectedItems)
-                {
-                    result += item.ToString() + ", ";
-                }
+                    result.Add(item);
             }
             else
             {
-                foreach (var item in collection)
+                result = (List<T>)collection;
+            }
+            
+            string str = "";
+            for (int i = 0; i < result.Count; i++)
+            {
+                str += result[i];
+                if (i < result.Count - 1)
                 {
-                    result += item.ToString() + ", ";
+                    str += ", ";
                 }
             }
-
-           
+            Console.WriteLine(str);
             return result;
         }
     
